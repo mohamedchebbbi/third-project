@@ -31,7 +31,7 @@ products.forEach((item, i) => {
             <img src="${item.photo}" alt="${item.name}"/>
             <section>
                 <span>${item.name}</span>
-                <span>&#x20b5;${item.rate.toFixed(2)}</span>
+                <span>&#x24;${item.rate.toFixed(2)}</span>
             </section>
             <button type="button" class="btnAdToCart" onclick="addToCart(${item.id});">&plus;</button>
         </div>
@@ -55,10 +55,10 @@ const popCart = () => {
                     <section>
                         <span>${products[item.id - 1].name}</span>
                         <span>${item.qty}</span>
-                        <span>&#x20b5;${products[item.id - 1].rate.toFixed(2)}</span>
+                        <span>&&#x24;${products[item.id - 1].rate.toFixed(2)}</span>
                     </section>
                     <section>
-                        &#x20b5;${(item.qty*products[item.id - 1].rate).toFixed(2)}
+                        &#x24;${(item.qty*products[item.id - 1].rate).toFixed(2)}
                     </section>
                     <button type="button" class="btnRemoveCartItem" onclick="removeCartItem(${item.id});">&times;</button>
                 </div>
@@ -70,11 +70,11 @@ const popCart = () => {
                 <section>
                     <div class="">
                         <small>Sub Total:</small>
-                        <apan class="billAmt">&#x20b5;${(cart.reduce((accu, item, i) => accu += item.qty*products[i].rate, 0)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                        <apan class="billAmt">&#x24;${(cart.reduce((accu, item, i) => accu += item.qty*products[i].rate, 0)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
                     </div>
                     <div class="">
                         <small>Total Bill:</small>
-                        <apan class="billAmt">&#x20b5;${(cart.reduce((accu, item, i) => accu += item.qty*products[i].rate, 0)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                        <apan class="billAmt">&#x24;${(cart.reduce((accu, item, i) => accu += item.qty*products[i].rate, 0)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
                     </div>
                 </section>
                 <section>
@@ -93,7 +93,7 @@ const popCart = () => {
         `);
     }
     cart.reduce((accu, item) => accu += item.qty, 0) < 1 ? $("header nav .cartCount").find("sup").css('background', 'gray').text(cart.reduce((accu, item) => accu += item.qty, 0)) : $("header nav .cartCount sup").css('background', 'green').text(cart.reduce((accu, item) => accu += item.qty, 0));
-    $("main .callout .row:last-child section:first-child span#billAmt").html(`&#x20b5;${cart.reduce((accu, item) => accu += (item.qty*item.rate), 0)}`);
+    $("main .callout .row:last-child section:first-child span#billAmt").html(`&#x24;${cart.reduce((accu, item) => accu += (item.qty*item.rate), 0)}`);
 }
 popCart();
 
