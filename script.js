@@ -55,10 +55,10 @@ const popCart = () => {
                     <section>
                         <span>${products[item.id - 1].name}</span>
                         <span>${item.qty}</span>
-                        <span>&&#x24;${products[item.id - 1].rate.toFixed(2)}</span>
+                        <span>&#x24;${products[item.id - 1].rate.toFixed(2)}</span>
                     </section>
                     <section>
-                        &#x24;${(item.qty*products[item.id - 1].rate).toFixed(2)}
+                    &#x24;${(item.qty*products[item.id - 1].rate).toFixed(2)}
                     </section>
                     <button type="button" class="btnRemoveCartItem" onclick="removeCartItem(${item.id});">&times;</button>
                 </div>
