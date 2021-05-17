@@ -43,7 +43,7 @@ let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart'
 const getIndex = id => cart.indexOf(cart.find(item => item.id === id));
 
 const popCart = () => {
-    // console.log(cart);
+ 
     if(cart.length > 0){
         $("main .callout").html(`
             <div class="row">
